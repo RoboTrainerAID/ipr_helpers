@@ -1,0 +1,10 @@
+#!/usr/bin/env python
+from rosparam_handler.parameter_generator_catkin import *
+gen = ParameterGenerator()
+
+# Parameters with different types
+gen.add("rate", paramtype="double",description="Publishing rate")
+gen.add("root_frame", paramtype="std::string", description="Root frame for goal TF.",  default="world")
+gen.add("child_frame", paramtype="std::string", description="Child frame for TF which position to root_frame is published.",  default="base_link")
+
+exit(gen.generate("ipr_helpers", "extract_mobile_robot_tf", "ExtractMobileRobotTF"))
