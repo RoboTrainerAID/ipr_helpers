@@ -3,6 +3,12 @@ project(ipr_helpers)
 
 find_package(catkin REQUIRED COMPONENTS dynamic_reconfigure geometry_msgs rosparam_handler std_msgs tf2 tf2_ros)
 
+include(CheckCXXCompilerFlag)
+CHECK_CXX_COMPILER_FLAG("-std=c++11" Cpp11CompilerFlag)
+if (${Cpp11CompilerFlag})
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+endif()
+
 ################################################
 ## Declare ROS messages, services and actions ##
 ################################################
