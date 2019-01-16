@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(ipr_helpers)
 
-find_package(catkin REQUIRED COMPONENTS dynamic_reconfigure geometry_msgs rosparam_handler std_msgs tf2 tf2_ros)
+find_package(catkin REQUIRED COMPONENTS dynamic_reconfigure geometry_msgs rosparam_handler std_msgs tf2 tf2_geometry_msgs tf2_ros)
 
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++11" Cpp11CompilerFlag)
@@ -36,7 +36,7 @@ generate_ros_parameter_files(
 catkin_package(
   INCLUDE_DIRS include
 #  LIBRARIES ipr_helpers
-  CATKIN_DEPENDS dynamic_reconfigure geometry_msgs rosparam_handler std_msgs tf2 tf2_ros
+  CATKIN_DEPENDS dynamic_reconfigure geometry_msgs rosparam_handler std_msgs tf2 tf2_geometry_msgs tf2_ros
 #  DEPENDS system_lib
 )
 
